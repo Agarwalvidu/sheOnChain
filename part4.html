@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // -------------------------
+        // 1. Understanding Callbacks
+        // -------------------------
+
+        // A function that takes a callback
+        function fetchData(callback) {
+            setTimeout(() => {
+                console.log("Data fetched successfully!");
+                callback("Sample Data");
+            }, 2000);
+        }
+
+        // Using the callback function
+        fetchData(function (data) {
+            console.log("Callback received data:", data);
+        });
+
+        // Problem with Callbacks: Callback Hell
+        setTimeout(() => {
+            console.log("Step 1");
+            setTimeout(() => {
+                console.log("Step 2");
+                setTimeout(() => {
+                    console.log("Step 3");
+                }, 1000);
+            }, 1000);
+        }, 1000);
+
+        // -------------------------
+        // 2. Promises - A Better Way
+        // -------------------------
+
+        // Creating a Promise
+        function fetchDataPromise() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    let success = true; // Change to false to test rejection
+                    if (success) {
+                        resolve("Data received via Promise!");
+                    } else {
+                        reject("Error: Failed to fetch data");
+                    }
+                }, 2000);
+            });
+        }
+
+        // Using .then() and .catch()
+        fetchDataPromise()
+            .then((data) => {
+                console.log("Promise resolved:", data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+
+        // -------------------------
+        // 3. Async/Await - Modern Approach
+        // -------------------------
+
+        // Function using async/await
+        async function fetchAsyncData() {
+            try {
+                console.log("Fetching data...");
+                let data = await fetchDataPromise();
+                console.log("Async/Await Data:", data);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        // Calling the async function
+        fetchAsyncData();
+
+    </script>
+</body>
+
+</html>

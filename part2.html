@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // -------------------------
+        // 1. Arrays and Their Methods
+        // -------------------------
+
+        // Creating an array
+        let fruits = ["Apple", "Banana", "Cherry"];
+        console.log("Original Array:", fruits);
+
+        // Push (Add to end) & Pop (Remove from end)
+        fruits.push("Mango");
+        console.log("After Push:", fruits);
+        fruits.pop();
+        console.log("After Pop:", fruits);
+
+        // Unshift (Add to beginning) & Shift (Remove from beginning)
+        fruits.unshift("Orange");
+        console.log("After Unshift:", fruits);
+        fruits.shift();
+        console.log("After Shift:", fruits);
+
+        // Concat (Merging Arrays)
+        let vegetables = ["Carrot", "Potato"];
+        let food = fruits.concat(vegetables);
+        console.log("Concatenated Array:", food);
+
+        // Slice (Extract portion) & Splice (Modify original array)
+        let slicedFruits = fruits.slice(1, 3); // Extracts elements from index 1 to 2
+        console.log("Sliced Fruits:", slicedFruits);
+        fruits.splice(1, 1, "Kiwi"); // Removes 1 element at index 1, inserts "Kiwi"
+        console.log("After Splice:", fruits);
+
+        // -------------------------
+        // 2. Rest and Spread Operators
+        // -------------------------
+
+        // Spread Operator (Expands array)
+        let numbers = [1, 2, 3];
+        let newNumbers = [...numbers, 4, 5]; // Expands numbers into a new array
+        console.log("Spread Operator:", newNumbers);
+
+        // Rest Operator (Collects multiple values)
+        function sum(...values) {
+            return values.reduce((acc, curr) => acc + curr, 0);
+        }
+        console.log("Sum using Rest Operator:", sum(10, 20, 30, 40));
+
+        // -------------------------
+        // 3. Map, Filter, Reduce Methods
+        // -------------------------
+
+        let numArray = [1, 2, 3, 4, 5];
+
+        // Map (Transform each element)
+        let squared = numArray.map(num => num * num);
+        console.log("Mapped (Squared) Array:", squared);
+
+        // Filter (Select elements based on condition)
+        let evens = numArray.filter(num => num % 2 === 0);
+        console.log("Filtered (Even Numbers):", evens);
+
+        // Reduce (Summarize array into a single value)
+        let total = numArray.reduce((acc, num) => acc + num, 0);
+        console.log("Reduced (Sum):", total);
+
+        // -------------------------
+        // 4. Functions in JavaScript
+        // -------------------------
+
+        // Named Function
+        function greet(name) {
+            return `Hello, ${name}!`;
+        }
+        console.log(greet("Alice"));
+
+        // Anonymous Function
+        const add = function (a, b) {
+            return a + b;
+        };
+        console.log("Anonymous Function (Addition):", add(5, 3));
+
+        // Arrow Function
+        const multiply = (a, b) => a * b;
+        console.log("Arrow Function (Multiplication):", multiply(4, 3));
+
+        // IIFE (Immediately Invoked Function Expression)
+        (function () {
+            console.log("This function runs immediately!");
+        })();
+
+        // Callback Function
+        function fetchData(callback) {
+            console.log("Fetching data...");
+            callback(); // Calling the callback function
+        }
+        fetchData(() => console.log("Data fetched successfully!"));
+
+        // Higher Order Function (Function returning function)
+        function higherOrderFunction() {
+            return function () {
+                console.log("Returned from higher-order function");
+            };
+        }
+        higherOrderFunction()(); // Invoking returned function
+
+        // -------------------------
+        // 5. Objects and Their Methods
+        // -------------------------
+
+        // Object Creation
+        let person = {
+            name: "John",
+            age: 30,
+            greet: function () {
+                console.log(`Hello, my name is ${this.name}`);
+            }
+        };
+
+        // Accessing Object Properties
+        console.log("Person Name:", person.name);
+        console.log("Person Age:", person.age);
+        person.greet();
+
+        // Maps (Key-Value Pairs)
+        let map = new Map();
+        map.set("name", "Alice");
+        map.set("age", 25);
+        console.log("Map Data:", map.get("name"));
+
+        // Sets (Unique Values)
+        let set = new Set([1, 2, 3, 3, 4, 4]);
+        console.log("Unique Values in Set:", [...set]);
+
+        // -------------------------
+        // 6. Strings and Their Methods
+        // -------------------------
+
+        let text = "  JavaScript is awesome!  ";
+
+        // Concat
+        let newText = text.concat(" Let's learn.");
+        console.log("Concatenated:", newText);
+
+        // Trim (Remove spaces)
+        console.log("Trimmed:", text.trim());
+
+        // Replace
+        console.log("Replaced:", text.replace("awesome", "powerful"));
+
+        // Split (Convert string to array)
+        console.log("Split into words:", text.split(" "));
+
+        // Search & IndexOf
+        console.log("Index of 'is':", text.indexOf("is"));
+        console.log("Search for 'JavaScript':", text.search("JavaScript"));
+
+    </script>
+</body>
+
+</html>

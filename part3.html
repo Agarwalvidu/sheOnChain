@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // -------------------------
+        // 1. Selecting Elements
+        // -------------------------
+
+        // Selecting an element by ID
+        let title = document.getElementById("main-title");
+        console.log("Element by ID:", title);
+
+        // Selecting elements by class
+        let items = document.getElementsByClassName("list-item");
+        console.log("Elements by Class:", items);
+
+        // Selecting elements by tag name
+        let paragraphs = document.getElementsByTagName("p");
+        console.log("Elements by Tag:", paragraphs);
+
+        // Selecting elements using querySelector (Single Element)
+        let firstItem = document.querySelector(".list-item");
+        console.log("First list item:", firstItem);
+
+        // Selecting multiple elements using querySelectorAll (Returns a NodeList)
+        let allItems = document.querySelectorAll(".list-item");
+        console.log("All list items:", allItems);
+
+        // -------------------------
+        // 2. Modifying Elements
+        // -------------------------
+
+        // Changing text content
+        title.textContent = "Updated Title using JavaScript";
+
+        // Changing innerHTML (Be cautious when using this)
+        let container = document.getElementById("content");
+        container.innerHTML = "<p>This content was added dynamically!</p>";
+
+        // Changing styles
+        title.style.color = "blue";
+        title.style.fontSize = "24px";
+
+        // Adding and removing classes
+        title.classList.add("highlight"); // Adds class
+        title.classList.remove("highlight"); // Removes class
+
+        // -------------------------
+        // 3. Creating and Adding Elements
+        // -------------------------
+
+        // Creating a new element
+        let newParagraph = document.createElement("p");
+        newParagraph.textContent = "This is a dynamically added paragraph.";
+        newParagraph.style.color = "green";
+
+        // Appending to an existing element
+        container.appendChild(newParagraph);
+
+        // -------------------------
+        // 4. Event Listeners
+        // -------------------------
+
+        // Click Event
+        let button = document.getElementById("click-btn");
+        button.addEventListener("click", function () {
+            alert("Button Clicked!");
+        });
+
+        // Mouseover Event
+        button.addEventListener("mouseover", function () {
+            button.style.backgroundColor = "lightgray";
+        });
+
+        // -------------------------
+        // 5. Removing Elements
+        // -------------------------
+
+        // Removing an element dynamically
+        let removeBtn = document.getElementById("remove-btn");
+        removeBtn.addEventListener("click", function () {
+            if (newParagraph) {
+                newParagraph.remove();
+                console.log("Paragraph removed!");
+            }
+        });
+
+        // -------------------------
+        // 6. Form Handling
+        // -------------------------
+
+        let inputField = document.getElementById("name-input");
+        let formButton = document.getElementById("submit-btn");
+
+        // Event listener for input change
+        inputField.addEventListener("input", function (event) {
+            console.log("User Typed:", event.target.value);
+        });
+
+        // Event listener for form submission
+        formButton.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevents form from refreshing the page
+            console.log("Form Submitted with Name:", inputField.value);
+        });
+
+    </script>
+</body>
+
+</html>

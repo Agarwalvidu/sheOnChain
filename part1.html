@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // -------------------------
+        // 1. Hello World in JavaScript
+        // -------------------------
+
+        // Printing Hello World in the console
+        console.log("Hello, World!");
+
+        // Printing Hello World on the webpage
+        document.body.innerHTML += "<h2>Hello, World!</h2>";
+
+
+        // -------------------------
+        // 2. var, let, and const
+        // -------------------------
+
+        // Using var (Function-scoped)
+        var x = 10;
+        console.log("Var x:", x); // Output: 10
+
+        // Using let (Block-scoped)
+        let y = 20;
+        console.log("Let y:", y); // Output: 20
+
+        // Using const (Block-scoped, cannot be reassigned)
+        const z = 30;
+        console.log("Const z:", z); // Output: 30
+
+        // Uncommenting below line will cause an error, as 'z' cannot be reassigned
+        // z = 40; // ❌ Error: Assignment to constant variable
+
+
+        // -------------------------
+        // 3. Strings and Template Strings
+        // -------------------------
+
+        let firstName = "John";
+        let lastName = "Doe";
+
+        // String concatenation
+        let fullName = firstName + " " + lastName;
+        console.log("Full Name:", fullName);
+
+        // Template Literals (Recommended)
+        let message = `Hello, my name is ${firstName} ${lastName}.`;
+        console.log("Template String:", message);
+
+
+        // -------------------------
+        // 4. Operators in JavaScript
+        // -------------------------
+
+        let a = 10, b = 5;
+
+        // Arithmetic Operators
+        console.log("Addition:", a + b); // Output: 15
+        console.log("Subtraction:", a - b); // Output: 5
+        console.log("Multiplication:", a * b); // Output: 50
+        console.log("Division:", a / b); // Output: 2
+        console.log("Modulus (Remainder):", a % b); // Output: 0
+
+        // Comparison Operators
+        console.log("Is a equal to b?", a == b); // false
+        console.log("Is a strictly equal to b?", a === b); // false
+        console.log("Is a greater than b?", a > b); // true
+
+        // Logical Operators
+        console.log("Both conditions true:", a > 5 && b < 10); // true
+        console.log("At least one condition true:", a > 5 || b > 10); // true
+
+
+        // -------------------------
+        // 5. If-Else, Else If, Switch Statement
+        // -------------------------
+
+        let num = 15;
+
+        // if-else-if ladder
+        if (num > 20) {
+            console.log("Number is greater than 20.");
+        } else if (num > 10) {
+            console.log("Number is between 10 and 20.");
+        } else {
+            console.log("Number is 10 or less.");
+        }
+
+        // Switch case
+        let day = "Monday";
+
+        switch (day) {
+            case "Monday":
+                console.log("Start of the week!");
+                break;
+            case "Friday":
+                console.log("Weekend is coming!");
+                break;
+            case "Sunday":
+                console.log("Weekend!");
+                break;
+            default:
+                console.log("A regular day.");
+        }
+
+
+        // -------------------------
+        // 6. Break and Continue
+        // -------------------------
+
+        // Using break (stops loop when condition is met)
+        for (let i = 1; i <= 10; i++) {
+            if (i === 5) {
+                console.log("Breaking at", i);
+                break;
+            }
+            console.log(i);
+        }
+
+        // Using continue (skips iteration when condition is met)
+        for (let i = 1; i <= 5; i++) {
+            if (i === 3) {
+                console.log("Skipping", i);
+                continue;
+            }
+            console.log(i);
+        }
+
+
+        // -------------------------
+        // 7. Loops in JavaScript (For, While, Do-While)
+        // -------------------------
+
+        // For Loop
+        console.log("For Loop:");
+        for (let i = 1; i <= 5; i++) {
+            console.log(i);
+        }
+
+        // While Loop
+        console.log("While Loop:");
+        let j = 1;
+        while (j <= 5) {
+            console.log(j);
+            j++;
+        }
+
+        // Do-While Loop (Executes at least once)
+        console.log("Do-While Loop:");
+        let k = 1;
+        do {
+            console.log(k);
+            k++;
+        } while (k <= 5);
+
+    </script>
+</body>
+
+</html>
