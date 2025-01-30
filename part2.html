@@ -13,6 +13,9 @@
         // 1. Arrays and Their Methods
         // -------------------------
 
+        // An array is a data structure used to store multiple values in a single variable. 
+        // Arrays are commonly used to store lists of items, like numbers, strings, or even other arrays. 
+        // JavaScript arrays come with built-in methods to manipulate their contents, making it easy to add, remove, and transform data
         // Creating an array
         let fruits = ["Apple", "Banana", "Cherry"];
         console.log("Original Array:", fruits);
@@ -25,7 +28,7 @@
 
         // Unshift (Add to beginning) & Shift (Remove from beginning)
         fruits.unshift("Orange");
-        console.log("After Unshift:", fruits);
+        console.log("After Unshift:", fruits); 
         fruits.shift();
         console.log("After Shift:", fruits);
 
@@ -44,6 +47,9 @@
         // 2. Rest and Spread Operators
         // -------------------------
 
+        //The rest operator (...) is used to collect multiple elements into an array. 
+        // It's often used in function parameters to handle an arbitrary number of arguments. 
+        // The spread operator is used to spread out elements of an array or object, making it useful for merging arrays or copying data
         // Spread Operator (Expands array)
         let numbers = [1, 2, 3];
         let newNumbers = [...numbers, 4, 5]; // Expands numbers into a new array
@@ -62,20 +68,26 @@
         let numArray = [1, 2, 3, 4, 5];
 
         // Map (Transform each element)
+        // Map - Creates a new array by applying a function to each element
         let squared = numArray.map(num => num * num);
         console.log("Mapped (Squared) Array:", squared);
 
         // Filter (Select elements based on condition)
+        // Filter - Creates a new array with elements that pass a test
         let evens = numArray.filter(num => num % 2 === 0);
         console.log("Filtered (Even Numbers):", evens);
 
         // Reduce (Summarize array into a single value)
+        // Reduce - Reduces the array to a single value based on a function
         let total = numArray.reduce((acc, num) => acc + num, 0);
         console.log("Reduced (Sum):", total);
 
         // -------------------------
         // 4. Functions in JavaScript
         // -------------------------
+        // A function is a block of code that performs a specific task. 
+        // Functions can be defined using the function keyword and can be called to execute the task whenever needed. 
+        // Functions can also accept parameters and return values.
 
         // Named Function
         function greet(name) {
@@ -90,15 +102,20 @@
         console.log("Anonymous Function (Addition):", add(5, 3));
 
         // Arrow Function
+        // Arrow functions are a shorter syntax for writing functions, introduced in ES6. 
+        // They are more concise and don't have their own "this" context, which makes them behave differently from regular functions in certain cases.
         const multiply = (a, b) => a * b;
         console.log("Arrow Function (Multiplication):", multiply(4, 3));
 
         // IIFE (Immediately Invoked Function Expression)
+        // A function that is executed immediately after its definition.
         (function () {
             console.log("This function runs immediately!");
         })();
 
         // Callback Function
+        // Callback Functions: Functions passed as arguments to other functions and executed at a later time.
+
         function fetchData(callback) {
             console.log("Fetching data...");
             callback(); // Calling the callback function
@@ -106,6 +123,7 @@
         fetchData(() => console.log("Data fetched successfully!"));
 
         // Higher Order Function (Function returning function)
+        // Higher-Order Functions: Functions that take other functions as arguments or return a function.
         function higherOrderFunction() {
             return function () {
                 console.log("Returned from higher-order function");
@@ -118,18 +136,21 @@
         // -------------------------
 
         // Object Creation
+        // Objects are used to store collections of data. 
+        // They are collections of key-value pairs, where each key (also known as a property) points to a value, 
+        // which can be a string, number, function, or even another object.
         let person = {
             name: "John",
             age: 30,
-            greet: function () {
-                console.log(`Hello, my name is ${this.name}`);
+            greet: function (nameP) {
+                console.log(`Hello, my name is ${nameP}`);
             }
         };
 
         // Accessing Object Properties
         console.log("Person Name:", person.name);
         console.log("Person Age:", person.age);
-        person.greet();
+        person.greet("Vidushi");
 
         // Maps (Key-Value Pairs)
         let map = new Map();

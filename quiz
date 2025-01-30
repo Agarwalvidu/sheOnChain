@@ -1,0 +1,45 @@
+1. What does HTML stand for?
+
+Answer: HyperText Markup Language
+2. Which HTML tag is used to define a hyperlink?
+
+Answer: <a>
+3. In CSS, what property is used to change the background color of an element?
+
+Answer: background-color
+4. Which CSS property controls the space between the content and the border of an element?
+
+Answer: padding
+5. How can you declare a variable in JavaScript that cannot be reassigned?
+
+Answer: Using const
+6. What is the purpose of the useState hook in React?
+
+Answer: It allows you to add state to functional components.
+7. Which JavaScript method is used to add a new item to the end of an array?
+
+Answer: push()
+8. Which JavaScript statement is used to make decisions in a program?
+
+Answer: if-else
+9. In React, how do you pass data from a parent component to a child component?
+
+Answer: Using props
+10. What is the default display property of a <div> element in CSS?
+
+Answer: block
+11. What JavaScript method can be used to remove the first element from an array?
+
+Answer: shift()
+12. Which of the following is the correct syntax for a React component?
+
+Answer: function MyComponent() { return <div>Hello</div>; }
+13. Which CSS property is used to change the font size of text?
+
+Answer: font-size
+14. What does the await keyword do in JavaScript?
+
+Answer: It pauses the execution of an async function until a Promise is resolved.
+15. What is the difference between let and const in JavaScript?
+
+Answer: let allows reassignment of the variable, while const does not.

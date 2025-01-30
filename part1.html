@@ -24,6 +24,12 @@
         // 2. var, let, and const
         // -------------------------
 
+        //In JavaScript, variables can be declared using var, let, and const. Each one has different scoping rules:
+
+    //var: Has function-level scope, meaning it is accessible within the function it is declared in (or globally if not in a function).
+    //let: Has block-level scope, meaning it is accessible only within the block it is declared in, such as inside loops or conditionals.
+    //const: Also has block-level scope, but it is used to declare variables whose value cannot be reassigned.
+
         // Using var (Function-scoped)
         var x = 10;
         console.log("Var x:", x); // Output: 10
@@ -35,6 +41,7 @@
         // Using const (Block-scoped, cannot be reassigned)
         const z = 30;
         console.log("Const z:", z); // Output: 30
+        // z = 40;
 
         // Uncommenting below line will cause an error, as 'z' cannot be reassigned
         // z = 40; // ❌ Error: Assignment to constant variable
@@ -95,7 +102,7 @@
         }
 
         // Switch case
-        let day = "Monday";
+        let day = "Tuesday";
 
         switch (day) {
             case "Monday":
@@ -149,8 +156,12 @@
         console.log("While Loop:");
         let j = 1;
         while (j <= 5) {
+            if(j==1){
+                break;
+            }
             console.log(j);
             j++;
+            
         }
 
         // Do-While Loop (Executes at least once)
@@ -159,6 +170,9 @@
         do {
             console.log(k);
             k++;
+            if(i==1){
+                break;
+            }
         } while (k <= 5);
 
     </script>

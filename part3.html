@@ -8,49 +8,31 @@
 </head>
 
 <body>
+    <div>
+    <h1 id="greeting">Hello, World!</h1>
+    <button id="changeTextBtn">Change Text</button>
     <script>
+        // The DOM (Document Object Model) is an interface that allows us to interact with HTML and XML documents in JavaScript.
+        // With DOM manipulation, we can change the content, structure, and style of a web page dynamically. 
+        // JavaScript allows us to select elements, change their properties, and even create or delete elements within the document.
+
         // -------------------------
         // 1. Selecting Elements
+        // We can use methods like getElementById, getElementsByClassName, and querySelector 
+        // to select elements from the DOM and then manipulate them.
         // -------------------------
 
-        // Selecting an element by ID
-        let title = document.getElementById("main-title");
-        console.log("Element by ID:", title);
+        // Selecting an element by its ID
+        let greetingElement = document.getElementById("greeting");
+        
+        // Selecting an element using querySelector
+        let buttonElement = document.querySelector("#changeTextBtn");
 
-        // Selecting elements by class
-        let items = document.getElementsByClassName("list-item");
-        console.log("Elements by Class:", items);
-
-        // Selecting elements by tag name
-        let paragraphs = document.getElementsByTagName("p");
-        console.log("Elements by Tag:", paragraphs);
-
-        // Selecting elements using querySelector (Single Element)
-        let firstItem = document.querySelector(".list-item");
-        console.log("First list item:", firstItem);
-
-        // Selecting multiple elements using querySelectorAll (Returns a NodeList)
-        let allItems = document.querySelectorAll(".list-item");
-        console.log("All list items:", allItems);
-
-        // -------------------------
-        // 2. Modifying Elements
-        // -------------------------
-
-        // Changing text content
-        title.textContent = "Updated Title using JavaScript";
-
-        // Changing innerHTML (Be cautious when using this)
-        let container = document.getElementById("content");
-        container.innerHTML = "<p>This content was added dynamically!</p>";
-
-        // Changing styles
-        title.style.color = "blue";
-        title.style.fontSize = "24px";
-
-        // Adding and removing classes
-        title.classList.add("highlight"); // Adds class
-        title.classList.remove("highlight"); // Removes class
+        // Adding an event listener to the button
+        buttonElement.addEventListener("click", function() {
+            // Changing the text content of the h1 element
+            greetingElement.textContent = "This is a JS session";
+        });
 
         // -------------------------
         // 3. Creating and Adding Elements
@@ -69,7 +51,7 @@
         // -------------------------
 
         // Click Event
-        let button = document.getElementById("click-btn");
+        let button = document.getElementById("changeTextBtn");
         button.addEventListener("click", function () {
             alert("Button Clicked!");
         });
@@ -84,7 +66,7 @@
         // -------------------------
 
         // Removing an element dynamically
-        let removeBtn = document.getElementById("remove-btn");
+        let removeBtn = document.getElementById("changeTextBtn");
         removeBtn.addEventListener("click", function () {
             if (newParagraph) {
                 newParagraph.remove();
